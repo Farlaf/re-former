@@ -24,7 +24,7 @@
     <%#= submit_tag 'Save' %>
 <%# end %>
 
-<%= form_with model: @user, url: '/users#create' do |form| %>
+<%= form_with model: @user, url: '/users' do |form| %>
     <%= form.label :username, "Your user name here"%>
     <%= form.text_field :username %>
 
