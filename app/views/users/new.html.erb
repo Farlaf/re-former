@@ -24,7 +24,16 @@
     <%#= submit_tag 'Save' %>
 <%# end %>
 
-<%= form_with model: @user, url: '/users' do |form| %>
+<% if @user.errors.any? %>
+    <h2>You has erorrs</h2>
+    <ul>
+        <% @user.errors.each do |err| %>
+            <li><%= err.full_message %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_with model: @user do |form| %>
     <%= form.label :username, "Your user name here"%>
     <%= form.text_field :username %>
 
